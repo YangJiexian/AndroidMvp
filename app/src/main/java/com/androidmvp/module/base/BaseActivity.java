@@ -3,10 +3,6 @@ package com.androidmvp.module.base;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.androidmvp.injector.modules.ActivityModule;
-import com.androidmvp.AndroidApplication;
-import com.androidmvp.injector.components.ApplicationComponent;
-
 /**
  */
 
@@ -16,9 +12,4 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
-    protected ActivityModule getActivityModule() {
-        return new ActivityModule(this);
-    }
-
 }
