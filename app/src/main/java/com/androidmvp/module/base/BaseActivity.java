@@ -15,11 +15,6 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getApplicationComponent().inject(this);
-    }
-
-    protected ApplicationComponent getApplicationComponent() {
-        return ((AndroidApplication)getApplication()).getAppComponent();
     }
 
     protected ActivityModule getActivityModule() {
