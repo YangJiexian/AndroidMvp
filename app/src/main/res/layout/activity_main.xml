@@ -7,8 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context=".module.main.MainActivity">
+    android:orientation="vertical">
     <Button
         android:id="@+id/display_weather"
         android:layout_width="wrap_content"
@@ -25,4 +24,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="地方克里斯多夫"
+        tools:textColor="@color/colorPrimary"/>
+
 </LinearLayout>

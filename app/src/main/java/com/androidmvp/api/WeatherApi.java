@@ -11,6 +11,6 @@ import rx.Observable;
  */
 
 public interface WeatherApi {
-    @GET("{cityId}"+".html")
+    @GET("adat/sk/{cityId}"+".html")
     Observable<WeatherInfo> getModelBean(@Path("cityId") String cityId);
 }

@@ -1,5 +1,6 @@
 package com.androidmvp.local.dao;
 
+import com.androidmvp.api.RetrofitService;
 import com.androidmvp.api.WeatherApi;
 import com.androidmvp.local.table.WeatherInfo;
 import com.androidmvp.module.main.MainPresenter;
@@ -32,12 +33,7 @@ public class WeatherDao {
     }
 
     public void getData(){
-        Retrofit retrofit=new Retrofit.Builder()
-                .baseUrl(baseUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build();
-        WeatherApi weatherApi = retrofit.create(WeatherApi.class);
+        WeatherApi weatherApi = RetrofitService.creatApi(WeatherApi.class);
         weatherApi.getModelBean("101010100")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
