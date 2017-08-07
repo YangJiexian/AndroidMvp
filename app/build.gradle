@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 26
     buildToolsVersion "25.0.3"
@@ -16,6 +16,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    greendao{
+        schemaVersion 1
+        targetGenDir 'src/main/java'
     }
 }
 
@@ -38,13 +42,15 @@ dependencies {
     annotationProcessor 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     // greendao
     compile 'org.greenrobot:greendao:3.2.2'
+    compile'org.greenrobot:greendao-generator:3.2.2'
     // Net
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.squareup.retrofit2:converter-scalars:2.2.0'
     compile 'com.squareup.okhttp3:okhttp:3.7.0'
     // Rx
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.2.9'
+
 }

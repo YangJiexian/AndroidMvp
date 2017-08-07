@@ -9,6 +9,7 @@ import com.androidmvp.R;
 import com.androidmvp.injector.components.DaggerMainComponent;
 import com.androidmvp.injector.modules.MainPresenterModule;
 import com.androidmvp.local.table.WeatherInfo;
+import com.androidmvp.local.table.WeatherinfoEntity;
 import com.androidmvp.module.base.BaseActivity;
 import javax.inject.Inject;
 import butterknife.BindView;
@@ -22,6 +23,8 @@ public class MainActivity extends BaseActivity implements MainView{
     ProgressBar progressBar;
     @BindView(R.id.display_weather)
     Button displayWeather;
+
+
 
     //Dagger不能注入私有变量
     @Inject
@@ -60,7 +63,7 @@ public class MainActivity extends BaseActivity implements MainView{
             tv.setText("请求失败");
         }
         else{
-            WeatherInfo.WeatherinfoEntity bean = mybean.getWeatherinfo();
+            WeatherinfoEntity bean = mybean.getWeatherinfo();
             String city=bean.getCity();
             String wd=bean.getWD();
             String ws=bean.getWS();

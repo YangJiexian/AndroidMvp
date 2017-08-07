@@ -1,8 +1,11 @@
 package com.androidmvp.local.dao;
 
+import com.androidmvp.AndroidApplication;
 import com.androidmvp.api.RetrofitService;
 import com.androidmvp.api.WeatherApi;
 import com.androidmvp.local.table.WeatherInfo;
+import com.androidmvp.local.table.WeatherinfoEntity;
+import com.androidmvp.local.table.WeatherinfoEntityDao;
 import com.androidmvp.module.main.MainPresenter;
 
 import java.util.ArrayList;
@@ -24,12 +27,14 @@ import rx.schedulers.Schedulers;
 public class WeatherDao {
 
     //地址：http://www.weather.com.cn/adat/sk/101010100.html
-    private String baseUrl="http://www.weather.com.cn/adat/sk/";
+    //private String baseUrl="http://www.weather.com.cn/adat/sk/";
+
     private List<WeatherInfo> list = new ArrayList<>();
     private MainPresenter mainPresenter;
-
+    private WeatherinfoEntityDao weatherinfoEntityDao;
     public WeatherDao(MainPresenter mainPresenter){
         this.mainPresenter = mainPresenter;
+        weatherinfoEntityDao = AndroidApplication.getInstance().getDaoSession().getWeatherinfoEntityDao();
     }
 
     public void getData(){
