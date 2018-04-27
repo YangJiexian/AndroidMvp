@@ -6,12 +6,9 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.androidmvp.R;
-import com.androidmvp.injector.components.DaggerMainComponent;
-import com.androidmvp.injector.modules.MainPresenterModule;
 import com.androidmvp.local.table.WeatherInfo;
 import com.androidmvp.local.table.WeatherinfoEntity;
 import com.androidmvp.module.base.BaseActivity;
-import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -25,11 +22,6 @@ public class MainActivity extends BaseActivity implements MainView{
     Button displayWeather;
 
 
-
-    //Dagger不能注入私有变量
-    @Inject
-    public MainPresenter myPresenter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,25 +29,12 @@ public class MainActivity extends BaseActivity implements MainView{
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initView();
-        listener();
     }
 
     @Override
     public void initView() {
-        DaggerMainComponent.builder()
-                .mainPresenterModule(new MainPresenterModule(this))
-                .build()
-                .inject(this);
     }
 
-    private void listener(){
-        displayWeather.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myPresenter.getData();
-            }
-        });
-    }
 
     @Override
     public void showData(WeatherInfo mybean) {

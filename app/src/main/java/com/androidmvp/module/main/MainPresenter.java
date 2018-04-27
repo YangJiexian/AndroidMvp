@@ -4,7 +4,6 @@ import com.androidmvp.local.table.WeatherInfo;
 
 import java.util.List;
 
-import javax.inject.Inject;
 
 /**
  * Presenter 主要起连接 View 和 Dao 的作用
@@ -14,7 +13,6 @@ public class MainPresenter {
     private MainView mainView;
     public WeatherDao weatherDao =new WeatherDao(this);
 
-    @Inject
     public MainPresenter(MainView mainView) {
         this.mainView=mainView;
 
