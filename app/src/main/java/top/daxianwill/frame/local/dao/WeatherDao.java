@@ -1,7 +1,7 @@
 package top.daxianwill.frame.local.dao;
 
 import top.daxianwill.frame.AndroidApplication;
-import top.daxianwill.frame.api.RetrofitService;
+import top.daxianwill.frame.api.RetrofitManager;
 import top.daxianwill.frame.api.WeatherApi;
 import top.daxianwill.frame.local.table.WeatherInfo;
 import top.daxianwill.frame.local.table.WeatherinfoEntityDao;
@@ -31,7 +31,7 @@ public class WeatherDao {
     }
 
     public void getData(){
-        WeatherApi weatherApi = RetrofitService.creatApi(WeatherApi.class);
+        WeatherApi weatherApi = RetrofitManager.creatApi(WeatherApi.class);
         weatherApi.getModelBean("101010100")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
