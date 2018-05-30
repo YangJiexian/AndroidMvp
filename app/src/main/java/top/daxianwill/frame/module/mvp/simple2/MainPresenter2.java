@@ -19,7 +19,7 @@ public class MainPresenter2 {
 
     public void attachView(MainView2 mainView){
         this.mainView1 = mainView;
-        weatherSubscriber = new WeatherSubscriber(mainView);
+        //weatherSubscriber = new WeatherSubscriber(mainView);
     }
 
     public void detachView(){

@@ -16,11 +16,13 @@ import top.daxianwill.frame.module.mvp.simple1.MainPresenter1;
 import top.daxianwill.frame.module.mvp.simple1.MainView1;
 import top.daxianwill.frame.module.mvp.simple2.MainPresenter2;
 import top.daxianwill.frame.module.mvp.simple2.MainView2;
+import top.daxianwill.frame.module.mvp.simple3.MainPresenter3;
+import top.daxianwill.frame.module.mvp.simple3.MainView3;
 
 /**
  * @author admin
  */
-public class MainActivity extends AppCompatActivity implements MainView2{
+public class MainActivity extends AppCompatActivity implements MainView3 {
 
     @BindView(R.id.tv_displayWeather)
     TextView tv;
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements MainView2{
     @BindView(R.id.display_weather)
     Button displayWeather;
 
-    private MainPresenter2 mainPresenter1;
+    private MainPresenter3 mainPresenter1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements MainView2{
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mainPresenter1 = new MainPresenter2();
+        mainPresenter1 = new MainPresenter3();
         mainPresenter1.attachView(this);
         displayWeather.setOnClickListener(new View.OnClickListener() {
             @Override
