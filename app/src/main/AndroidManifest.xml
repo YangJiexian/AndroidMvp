@@ -16,15 +16,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="top.daxianwill.frame.module.main.MainActivity">
+
+        </activity>
+
+        <!-- 普通代码实现 -->
+        <activity android:name="top.daxianwill.frame.module.mvp.simple0.MainActivity0" />
+
+        <!-- simple5 -->
+        <activity android:name="top.daxianwill.frame.module.mvp.simple5.MainActivity5" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- 普通代码实现 -->
-        <activity android:name="top.daxianwill.frame.module.mvp.simple0.MainActivity0" />
     </application>
 
 </manifest>

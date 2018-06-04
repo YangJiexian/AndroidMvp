@@ -18,7 +18,7 @@ public class MainPresenter4 extends BasePresenter4<MainView4> {
     }
 
     public void getWeather(){
-        weatherSubscriber = new WeatherSubscriber(getView());
+        //weatherSubscriber = new WeatherSubscriber(getView());
         mainModel1.getData(weatherSubscriber);
     }
 }
