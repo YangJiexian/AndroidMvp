@@ -1,20 +1,20 @@
-package top.daxianwill.frame.module.mvp.simple3;
+package top.daxianwill.frame.module.mvp.simple5;
 
 import top.daxianwill.frame.module.main.WeatherSubscriber;
-import top.daxianwill.frame.module.mvp.simple3.base.BasePresenter;
+import top.daxianwill.frame.module.mvp.simple4.base.BasePresenter4;
 
 /**
  * Created by admin on 2018/5/30.
  */
 
-public class MainPresenter3 extends BasePresenter{
+public class MainPresenter5 extends BasePresenter4<MainView5> {
 
-    private MainModel3 mainModel1;
+    private MainModel5 mainModel1;
 
     private WeatherSubscriber weatherSubscriber;
 
-    public MainPresenter3() {
-        this.mainModel1 = new MainModel3();
+    public MainPresenter5() {
+        this.mainModel1 = new MainModel5();
     }
 
     public void getWeather(){

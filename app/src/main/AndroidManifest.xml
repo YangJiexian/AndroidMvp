@@ -22,6 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 普通代码实现 -->
+        <activity android:name="top.daxianwill.frame.module.mvp.simple0.MainActivity0" />
     </application>
 
 </manifest>

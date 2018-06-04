@@ -1,4 +1,5 @@
-package top.daxianwill.frame.module.main;
+package top.daxianwill.frame.module.mvp.simple0;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -6,25 +7,20 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import com.mvp.R;
 
-import top.daxianwill.frame.local.table.WeatherInfo;
-import top.daxianwill.frame.local.table.WeatherinfoEntity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import top.daxianwill.frame.module.mvp.simple1.MainPresenter1;
-import top.daxianwill.frame.module.mvp.simple1.MainView1;
-import top.daxianwill.frame.module.mvp.simple2.MainPresenter2;
-import top.daxianwill.frame.module.mvp.simple2.MainView2;
+import top.daxianwill.frame.local.table.WeatherInfo;
+import top.daxianwill.frame.local.table.WeatherinfoEntity;
 import top.daxianwill.frame.module.mvp.simple3.MainPresenter3;
 import top.daxianwill.frame.module.mvp.simple3.MainView3;
-import top.daxianwill.frame.module.mvp.simple4.MainPresenter4;
-import top.daxianwill.frame.module.mvp.simple4.MainView4;
 
 /**
  * @author admin
  */
-public class MainActivity extends AppCompatActivity implements MainView4 {
+public class MainActivity0 extends AppCompatActivity implements MainView3 {
 
     @BindView(R.id.tv_displayWeather)
     TextView tv;
@@ -33,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements MainView4 {
     @BindView(R.id.display_weather)
     Button displayWeather;
 
-    private MainPresenter4 mainPresenter1;
+    private MainPresenter3 mainPresenter1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements MainView4 {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mainPresenter1 = new MainPresenter4();
+        mainPresenter1 = new MainPresenter3();
         mainPresenter1.attachView(this);
         displayWeather.setOnClickListener(new View.OnClickListener() {
             @Override
